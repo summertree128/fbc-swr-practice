@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
 function App() {
-  const url = "https://aaaaa.us/200?sleep=2000";
+  const url = "https://httpstat.us/200?sleep=2000";
   const headers = { Accept: "application/json" };
 
   const fetcher = (url) => fetch(url, { headers }).then((res) => res.json());
