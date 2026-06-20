@@ -1,10 +1,11 @@
 import useSWR from "swr";
 
+const headers = { Accept: "application/json" };
+const fetcher = (url) => fetch(url, { headers }).then((res) => res.json());
+
 function App() {
   const url = "https://httpstat.us/200?sleep=2000";
-  const headers = { Accept: "application/json" };
 
-  const fetcher = (url) => fetch(url, { headers }).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
 
   if (error) return <p>Failed to load.</p>;
